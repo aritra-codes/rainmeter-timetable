@@ -1,11 +1,16 @@
 function Initialize()
-    if SKIN:GetVariable("School") == "" then
-        SKIN:Bang("!SetOption", "SchoolLabel", "Text", "#SchoolPlaceholder#")
+    for i, setting in ipairs({"School", "Username", "Password"}) do
+        if SKIN:GetVariable(setting) == "" then
+            SKIN:Bang("!SetVariable", setting, string.format("#%sPlaceholder#", setting))
+        end
     end
-    if SKIN:GetVariable("Username") == "" then
-        SKIN:Bang("!SetOption", "UsernameLabel", "Text", "#UsernamePlaceholder#")
+end
+
+function UpdateSetting(setting, value)
+    if value == "" then
+        value = string.format("#%sPlaceholder#", setting)
     end
-    if SKIN:GetVariable("Password") == "" then
-        SKIN:Bang("!SetOption", "PasswordLabel", "Text", "#PasswordPlaceholder#")
-    end
+
+    SKIN:Bang("!SetVariable", setting, value)
+    SKIN:Bang("!WriteKeyValue", "Variables", setting, value, "#UserSettings#")
 end
