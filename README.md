@@ -24,7 +24,7 @@ You must have [Rainmeter](https://www.rainmeter.net/) installed.
 
 - Click on the latest [release](https://github.com/aritra-codes/rainmeter-timetable/releases/) (under the 'About' section).
 
-<img src="ReadMeFiles/LatestRelease.png" alt="Latest release" width="500">
+<img src="ReadmeFiles/LatestRelease.png" alt="Latest release" width="500">
 
 - Download the .rmskin file.
 - Open the file and install the skin.
