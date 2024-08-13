@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="ReadmeFiles/Logo.png" alt="Sparx Bookwork Tracker logo" width="200">
+  <img src="ReadmeFiles/Logo.png" alt="Rainmeter Timetable logo" width="200">
 
   # Rainmeter Timetable
 
@@ -11,7 +11,7 @@
 
   **Make life easy! 💪**
 
-  ![A gif of the extension running](ReadmeFiles/Running.gif)
+  ![GIF of the extension running](ReadmeFiles/Running.gif)
 
   If this helps you, please ⭐ the repository & [follow me](https://github.com/aritra-codes) :D
 </div>
@@ -23,6 +23,9 @@
 You must have [Rainmeter](https://www.rainmeter.net/) installed.
 
 - Click on the latest [release](https://github.com/aritra-codes/rainmeter-timetable/releases/) (under the 'About' section).
+
+<img src="ReadMeFiles/LatestRelease.png" alt="Latest release" width="500">
+
 - Download the .rmskin file.
 - Open the file and install the skin.
 - If the skin hasn't loaded automatically:
@@ -48,7 +51,7 @@ Just follow the installation instructions above.
   - To find out your exact school name:
     - Go to the [Log In](https://www.satchelone.com/login) page in Satchel One.
     - Start typing your school name and once it auto-completes to the correct school, copy it.
-    <img src="ReadmeFiles/School.gif" alt="Sparx Bookwork Tracker logo" width="300">
+    <img src="ReadmeFiles/School.gif" alt="GIF of copying school name" width="300">
 - After saving your settings, click on the Return button (at the top-right) to go back to the main menu.
 - Click on the Refresh button (🔄) to show today's timetable.
 ---

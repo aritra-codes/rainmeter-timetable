@@ -2,3 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.clas
+
+@Resources/Images/TimetableDark.png
+@Resources/Images/TimetableLight.png
