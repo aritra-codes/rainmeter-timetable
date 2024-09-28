@@ -4,6 +4,7 @@
   # Rainmeter Timetable
 
   ![GitHub Release Date](https://img.shields.io/github/release-date/aritra-codes/rainmeter-timetable)
+  ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/aritra-codes/rainmeter-timetable/total)
 
   ## Tired of opening up your timetable? ✅
 
@@ -23,9 +24,8 @@
 You must have [Rainmeter](https://www.rainmeter.net/) installed.
 
 - Click on the latest [release](https://github.com/aritra-codes/rainmeter-timetable/releases/) (under the 'About' section).
-
-<img src="ReadmeFiles/LatestRelease.png" alt="Latest release" width="500">
-
+  <br>
+  <img src="ReadmeFiles/LatestRelease.png" alt="Latest release" width="500">
 - Download the .rmskin file.
 - Open the file and install the skin.
 - If the skin hasn't loaded automatically:
@@ -51,7 +51,8 @@ Just follow the installation instructions above.
   - To find out your exact school name:
     - Go to the [Log In](https://www.satchelone.com/login) page in Satchel One.
     - Start typing your school name and once it auto-completes to the correct school, copy it.
-    <img src="ReadmeFiles/School.gif" alt="GIF of copying school name" width="300">
+      <br>
+      <img src="ReadmeFiles/School.gif" alt="GIF of copying school name" width="300">
 - After saving your settings, click on the Return button (at the top-right) to go back to the main menu.
 - Click on the Refresh button (🔄) to show today's timetable.
 ---
