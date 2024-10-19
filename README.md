@@ -21,6 +21,7 @@
 
 # ⬇️ Installation
 
+> [!NOTE]
 You must have [Rainmeter](https://www.rainmeter.net/) installed.
 
 - Click on the latest [release](https://github.com/aritra-codes/rainmeter-timetable/releases/) (under the 'About' section).
