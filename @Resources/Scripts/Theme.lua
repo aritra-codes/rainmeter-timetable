@@ -16,44 +16,15 @@ function WriteVariable(key, value)
 end
 
 function ApplyTheme()
-    if Theme == "light" then
-        TimetableImage = SKIN:GetVariable("TimetableImageLight")
-        PrimaryColor = "#PrimaryColorLight#"
-        SecondaryColor = "#SecondaryColorLight#"
-        FontColor = "#FontColorDark#"
-        NextIcon = "#NextIconDark#"
-        SettingsIcon= "#SettingsIconDark#"
-        RefreshIcon = "#RefreshIconDark#"
-        FitIcon = "#FitIconDark#"
-        ThemeIcon = "#ThemeIconLight#"
-        ReturnIcon = "#ReturnIconDark#"
-    else
-        TimetableImage = SKIN:GetVariable("TimetableImageDark")
-        PrimaryColor = "#PrimaryColorDark#"
-        SecondaryColor = "#SecondaryColorDark#"
-        FontColor = "#FontColorLight#"
-        NextIcon = "#NextIconLight#"
-        SettingsIcon= "#SettingsIconLight#"
-        RefreshIcon = "#RefreshIconLight#"
-        FitIcon = "#FitIconLight#"
-        ThemeIcon = "#ThemeIconDark#"
-        ReturnIcon = "#ReturnIconLight#"
-    end
-
+    TimetableImage = SKIN:GetVariable(string.format("TimetableImage%s", Theme))
     if not FileExists(TimetableImage) then
         TimetableImage = ""
     end
-
     WriteVariable("TimetableImage", TimetableImage)
-    WriteVariable("PrimaryColor", PrimaryColor)
-    WriteVariable("SecondaryColor", SecondaryColor)
-    WriteVariable("FontColor", FontColor)
-    WriteVariable("NextIcon", NextIcon)
-    WriteVariable("SettingsIcon", SettingsIcon)
-    WriteVariable("RefreshIcon", RefreshIcon)
-    WriteVariable("FitIcon", FitIcon)
-    WriteVariable("ThemeIcon", ThemeIcon)
-    WriteVariable("ReturnIcon", ReturnIcon)
+
+    for i, variable in ipairs({"PrimaryColor", "SecondaryColor", "FontColor", "NextIcon", "SettingsIcon", "RefreshIcon", "FitIcon", "ThemeIcon", "ReturnIcon", "DropdownIcon"}) do
+        WriteVariable(variable, string.format("#%s%s#", variable, Theme))
+    end
 
     if SKIN:GetVariable("CURRENTFILE") == SKIN:GetVariable("TimetableSkin") and TimetableImage ~= "" then
         -- ImageMeasures are disabled by default to avoid errors, here they are enabled
@@ -66,11 +37,7 @@ function ApplyTheme()
 end
 
 function ToggleTheme()
-    if Theme == "dark" then
-        Theme = "light"
-    else
-        Theme = "dark"
-    end
+    Theme = Theme == "Light" and "Dark" or "Light"
 
     ApplyTheme()
 

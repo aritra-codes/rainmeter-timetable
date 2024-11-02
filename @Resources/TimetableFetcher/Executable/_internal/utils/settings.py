@@ -1,6 +1,6 @@
 from configparser import RawConfigParser, NoSectionError, NoOptionError
 
-import selenium_satchel_one.constants as c
+import selenium_timetable.constants as c
 
 DEFAULT_SETTINGS: dict[str, dict[str, str | int | float | bool]] = c.DEFAULT_SETTINGS
 

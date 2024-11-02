@@ -1,5 +1,6 @@
 function Initialize()
-     ReadTime()
+    ReadTime()
+    DisplayDate()
 end
 
 function ValidifyPath(path)
@@ -22,22 +23,22 @@ end
 function FetchTimetable()
     -- Executable version
     ---[[
-    return os.execute(string.format('%s "%s" -tl "%s" -td "%s" -d "%s"',
-                                    ValidifyPath(SKIN:GetVariable("TimetableFetcher")),
+    return os.execute(string.format('%s "%s" "%s" -lp "%s" -dp "%s"',
+                                    ValidifyPath(SKIN:GetVariable("TimetableFetcherExe")),
                                     SKIN:GetVariable("UserSettings"),
+                                    Time,
                                     SKIN:GetVariable("TimetableImageLight"),
-                                    SKIN:GetVariable("TimetableImageDark"),
-                                    os.date("%Y-%m-%d", Time)))
+                                    SKIN:GetVariable("TimetableImageDark")))
     --]]
 
     -- Python version
     --[[
-    return os.execute(string.format('python "%s" "%s" -tl "%s" -td "%s" -d "%s"',
-                                    SKIN:GetVariable("TimetableFetcher"),
+    return os.execute(string.format('python "%s" "%s" "%s" -lp "%s" -dp "%s"',
+                                    SKIN:GetVariable("TimetableFetcherPython"),
                                     SKIN:GetVariable("UserSettings"),
+                                    Time,
                                     SKIN:GetVariable("TimetableImageLight"),
-                                    SKIN:GetVariable("TimetableImageDark"),
-                                    os.date("%Y-%m-%d", Time)))
+                                    SKIN:GetVariable("TimetableImageDark")))
     --]]
 end
 
@@ -45,7 +46,7 @@ function Notify(title, message)
     -- Executable version
     ---[[
     return os.execute(string.format('%s "%s" "%s"',
-                                    ValidifyPath(SKIN:GetVariable("Notifier")),
+                                    ValidifyPath(SKIN:GetVariable("NotifierExe")),
                                     title,
                                     message))
     --]]
@@ -53,25 +54,28 @@ function Notify(title, message)
     -- Python version
     --[[
     return os.execute(string.format('python "%s" "%s" "%s"',
-                                    SKIN:GetVariable("Notifier"),
+                                    SKIN:GetVariable("NotifierPython"),
                                     title,
                                     message))
     --]]
 end
 
+function SetTimeAsStartOfWeek(time)
+    local currentDayOfWeek = tonumber(os.date("%w", time)) - 1 -- Subtracting 1 converts start of week from Sun to Mon
+    Time = time - (currentDayOfWeek * (24 * 60 * 60))
+end
+
 function ReadTime()
-    Time = tonumber(SKIN:GetVariable("Time"))
+    local time = tonumber(SKIN:GetVariable("Time"))
+
+    if time then
+        SetTimeAsStartOfWeek(time)
+    end
 end
 
 function DisplayDate()
     if Time then
-        -- Subtracting 1 converts start of week from Sun to Mon
-        local currentDayOfWeek = tonumber(os.date("%w", Time)) - 1
-
-        local startOfWeek = Time - (currentDayOfWeek * (24 * 60 * 60))
-        local endOfWeek = Time + ((6 - currentDayOfWeek) * (24 * 60 * 60))
-
-        Date = string.format("%s - %s", os.date("%d %b", startOfWeek), os.date("%d %b", endOfWeek))
+        Date = string.format("%s - %s", os.date("%d %b", Time), os.date("%d %b", Time + (6 * 24 * 60 * 60)))
     else
         Date = "N/A"
     end
@@ -81,13 +85,12 @@ end
 
 function SetToday()
     Time = os.time()
-
     IncrementTime(0)
 end
 
 function IncrementTime(increment)
-    if tonumber(Time) then
-        Time = Time + increment
+    if Time then
+        SetTimeAsStartOfWeek(Time + increment)
 
         SKIN:Bang("!SetVariable", "TimetableImage", "")
         SKIN:Bang("!SetOption", "Date", "Text", "Loading...")
@@ -106,3 +109,4 @@ function IncrementTime(increment)
         DisplayDate()
     end
 end
+

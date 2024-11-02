@@ -1,7 +1,8 @@
 [Variables]
-Theme=dark
+Theme=Dark
 Title=Timetable
 Time=
+Service=
 School=
 Username=
 Password=
