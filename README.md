@@ -85,6 +85,6 @@ Toolbar (from left to right):
 ---
 
 # ‼️ Disclaimer
-This project is not associated with Satchel One.
+This project is not associated with Bromcom or Satchel One.
 
 If you have any problems with this project, please send me an email at aritra8.codes@gmail.com.
