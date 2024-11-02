@@ -109,4 +109,3 @@ function IncrementTime(increment)
         DisplayDate()
     end
 end
-

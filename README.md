@@ -8,7 +8,7 @@
 
   ## Tired of opening up your timetable? ✅
 
-  `Rainmeter Timetable` **automatically** displays your timetable from your school's website (currently only supports [Satchel One](https://www.satchelone.com/)) on your desktop! 📅
+  `Rainmeter Timetable` **automatically** displays your timetable from your school's website (currently only supports [Bromcom](https://www.bromcomvle.com/) and [Satchel One](https://www.satchelone.com/)) on your desktop! 📅
 
   **Make life easy! 💪**
 
@@ -44,16 +44,20 @@ Just follow the installation instructions above.
 # ⚙️ Setup
 
 - On the skin, click on the Settings (⚙️) button (or load Settings.ini) to go to the settings.
-- You need to enter your school (as written in Satchel One), username **or** email and password:
-  - To find out your username/email and password:
-    - Go to [Account Settings](https://www.satchelone.com/account-settings) in Satchel One.
-    - You can see your username and email in the "My details" section at the top.
-    - If you haven't set your password or forgotten your password, create a new password in the "Change your password" section.
-  - To find out your exact school name:
-    - Go to the [Log In](https://www.satchelone.com/login) page in Satchel One.
-    - Start typing your school name and once it auto-completes to the correct school, copy it.
+- Bromcom:
+  - Go to the [Bromcom Log In](https://www.bromcomvle.com/auth/login) page.
+  - Copy the details you would type here into the settings.
+- Satchel One:
+  - You need to enter your school (as written in Satchel One), username **or** email and password:
+    - To find out your exact school name:
+      - Go to the [Satchel One Log In](https://www.satchelone.com/login) page.
+      - Start typing your school name and once it auto-completes to the correct school, copy it.
       <br>
       <img src="ReadmeFiles/School.gif" alt="GIF of copying school name" width="300">
+    - To find out your username/email and password:
+      - Go to [Account Settings](https://www.satchelone.com/account-settings) in Satchel One.
+      - You can see your username and email in the "My details" section at the top.
+      - If you haven't set your password or forgotten your password, create a new password in the "Change your password" section.
 - After saving your settings, click on the Return button (at the top-right) to go back to the main menu.
 - Click on the Refresh button (🔄) to show today's timetable.
 ---
